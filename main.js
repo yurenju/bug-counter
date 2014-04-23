@@ -3,6 +3,7 @@ $(document).ready(function() {
   var reporter = $('#reporter');
   var summary = $('#summary');
   var link = $('#link');
+  var title = $('title');
 
   var ids = [];
   for (var i = 999950; i <= 1000000; i++) {
@@ -16,6 +17,7 @@ $(document).ready(function() {
     $.ajax(query).done(function(data) {
       var bug = data.bugs.pop();
       num.text(bug.id);
+      title.text(bug.id + '| Bug Counter');
       reporter.text(bug.creator_detail.real_name);
       summary.text(bug.summary);
       link.attr('href', 'https://bugzilla.mozilla.org/show_bug.cgi?id=' + bug.id);
