@@ -24,6 +24,6 @@ $(document).ready(function() {
     });
   }
 
-  setInterval(checkNumber, 1000*30);
+  setInterval(checkNumber, 1000*10);
   checkNumber();
 })
